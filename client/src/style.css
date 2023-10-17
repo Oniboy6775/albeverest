@@ -12,15 +12,15 @@ html {
   /* colors */
 
   --primary-50: #ffffff;
-  --primary-100: #ced4de;
-  --primary-200: #9ca9bd;
-  --primary-300: #6b7e9c;
-  --primary-400: #39537b;
-  --primary-500: #08285a;
-  --primary-600: #062048;
-  --primary-700: #051836;
-  --primary-800: #031024;
-  --primary-900: #020812;
+  --primary-100: #d6cfeb;
+  --primary-200: #ac9fd6;
+  --primary-300: #8370c2;
+  --primary-400: #5940ad;
+  --primary-500: #301099;
+  --primary-600: #260d7a;
+  --primary-700: #1d0a5c;
+  --primary-800: #13063d;
+  --primary-900: #0a031f;
   /* grey */
   --grey-50: #f8fafc;
   --grey-100: #f1f5f9;
@@ -48,6 +48,7 @@ html {
   --white: #fff;
   --red-light: #f8d7da;
   --red-dark: #842029;
+  --orange: #f0a010;
   --green-light: #d1e7dd;
   --green-dark: #0f5132;
 
@@ -164,7 +165,7 @@ ul {
   background: var(--primary-200);
 }
 .btn-danger {
-  background: var(--red-light);
+  background: var(--orange);
   color: var(--red-dark);
 }
 .btn-danger:hover {

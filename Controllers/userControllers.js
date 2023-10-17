@@ -22,7 +22,8 @@ const { disco } = require("../API_DATA/disco");
 const { network } = require("../API_DATA/network");
 const { TRANSFER_RECEIPT, BONUS_RECEIPT } = require("./TransactionReceipt");
 const { MTN_CG, MTN_SME } = require("../API_DATA/newData");
-const generateVpayAcc = require("../Utils/generateVpayAccount");
+// const generateVpayAcc = require("../Utils/generateVpayAccount");
+const generateAcc = require("../Utils/accountNumbers");
 
 const register = async (req, res) => {
   let { email, password, passwordCheck, userName, referredBy, phoneNumber } =
@@ -56,15 +57,16 @@ const register = async (req, res) => {
     await User.create({ ...req.body });
     // generate account number
     await generateAccountNumber({ userName, email });
+    await generateAcc({ userName, email });
     const user = await User.findOne({ email });
     const token = user.createJWT();
-    if (!user.reservedAccountNo3) {
-      let firstName = user.userName.split(" ")[0];
-      let lastName = user.userName.split(" ")[1] || user.userName;
-      let phoneNumber = user.phoneNumber;
-      let email = user.email;
-      await generateVpayAcc({ email, firstName, lastName, phoneNumber });
-    }
+    // if (!user.reservedAccountNo3) {
+    //   let firstName = user.userName.split(" ")[0];
+    //   let lastName = user.userName.split(" ")[1] || user.userName;
+    //   let phoneNumber = user.phoneNumber;
+    //   let email = user.email;
+    //   // await generateVpayAcc({ email, firstName, lastName, phoneNumber });
+    // }
     const allDataList = await Data.find();
     const MTN_SME_PRICE = allDataList
       .filter((e) => e.plan_network === "MTN")
@@ -142,19 +144,16 @@ const login = async (req, res) => {
   if (!isPasswordCorrect)
     return res.status(400).json({ msg: "Incorrect password" });
   // generate account number
-  if (!user.reservedAccountNo)
-    await generateAccountNumber({
-      userName,
-      email: user.email,
-    });
-  if (!user.reservedAccountNo3) {
-    console.log("no Vpay account number for this user\n generating.... ");
-    let firstName = user.userName.split(" ")[0];
-    let lastName = user.userName.split(" ")[1] || user.userName;
-    let phoneNumber = user.phoneNumber;
-    let email = user.email;
-    await generateVpayAcc({ email, firstName, lastName, phoneNumber });
-  }
+  if (user.accountNumbers.length < 1)
+    await generateAcc({ userName, email: user.email });
+  // if (!user.reservedAccountNo3) {
+  //   console.log("no Vpay account number for this user\n generating.... ");
+  //   let firstName = user.userName.split(" ")[0];
+  //   let lastName = user.userName.split(" ")[1] || user.userName;
+  //   let phoneNumber = user.phoneNumber;
+  //   let email = user.email;
+  //   await generateVpayAcc({ email, firstName, lastName, phoneNumber });
+  // }
   const token = user.createJWT();
   const isReseller = user.userType === "reseller";
   const isApiUser = user.userType === "api user";

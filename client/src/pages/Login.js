@@ -24,6 +24,16 @@ function Login() {
   return (
     <Container>
       <Wrapper>
+        <img
+          src="./logo.png"
+          alt="Albeverest"
+          height="50rem"
+          width="90rem"
+          className="logo"
+          onClick={() => {
+            navigate("/");
+          }}
+        />
         <button onClick={() => navigate("/")} className="home__btn btn">
           <FaHome />
         </button>
@@ -51,7 +61,7 @@ function Login() {
             {isLoading ? " please wait.." : " Login"}
           </button>
           <div className="new__user">
-            <p>New user?</p>
+            <p className="text-sm">New user?</p>
             <button
               className="register__btn btn"
               onClick={() => {

@@ -4,7 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsAppIcon = () => {
   const whatsAppLink = () => {
-    window.location.href = "https://wa.link/z5ma50";
+    window.location.href = "https://wa.link/jk00z5";
   };
   return (
     <Container onClick={whatsAppLink}>

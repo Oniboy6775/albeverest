@@ -12,7 +12,7 @@ const LandingNav = () => {
           className="logo mb-1 img rounded-full"
         />
 
-        <div className=" title">OlaDataPlug</div>
+        <div className=" title">albeverest</div>
         <div onClick={() => toggleNav()} className="hamburger ">
           <TiThMenu />
         </div>

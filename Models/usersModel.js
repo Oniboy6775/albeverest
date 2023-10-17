@@ -26,6 +26,9 @@ const userSchema = new mongoose.Schema({
       amountEarn: 0,
     },
   ],
+  accountNumbers: [{ bankName: String, accountNumber: String }],
+  referrals: [{ userName: String, totalEarned: Number }],
+
   userName: { type: String, required: true, lowercase: true, trim: true },
   phoneNumber: { type: String, required: true, trim: true },
 

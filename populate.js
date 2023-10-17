@@ -33,10 +33,11 @@ const populate = async () => {
     //   { $set: { volumeRatio: 0.5 } }
     // );
 
-    // await dataModel.create(GLO);
     // await dataModel.deleteMany({});
-    // await dataModel.create(MTN_SME);
-    // await dataModel.create(NMOBILE);
+    await dataModel.create(MTN_SME);
+    await dataModel.create(AIRTEL);
+    await dataModel.create(GLO);
+    await dataModel.create(NMOBILE);
     // await cabletvModel.create(GOTV);
     // await cabletvModel.create(DSTV);
     // await cabletvModel.create(STARTIME);

@@ -38,6 +38,16 @@ function Register() {
   return (
     <Container>
       <Wrapper>
+        <img
+          src="./logo.png"
+          alt="Albeverest"
+          height="50rem"
+          width="90rem"
+          className="logo"
+          onClick={() => {
+            navigate("/");
+          }}
+        />
         <button onClick={() => navigate("/")} className="home__btn btn">
           <FaHome />
         </button>
@@ -99,8 +109,8 @@ function Register() {
             {isLoading ? " please wait.." : " Register"}
           </button>
         </form>
-        <div className="new__user">
-          <p>Already have an account?</p>
+        <div className="new__user flex">
+          <p className="text-sm">Already have an account?</p>
           <button
             className="register__btn btn"
             onClick={() => {

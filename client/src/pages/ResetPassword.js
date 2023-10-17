@@ -33,6 +33,16 @@ function ResetPassword() {
   return (
     <Container>
       <Wrapper>
+        <img
+          src="./logo.png"
+          alt="Albeverest"
+          height="50rem"
+          width="90rem"
+          className="logo"
+          onClick={() => {
+            navigate("/");
+          }}
+        />
         <button onClick={() => navigate("/")} className="home__btn btn">
           <FaHome />
         </button>

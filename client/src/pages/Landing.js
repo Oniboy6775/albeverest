@@ -25,7 +25,7 @@ const Landing = () => {
           <div className="col">
             <h1 className="title mt-8">
               {" "}
-              {token ? `Hi ${user.userName}, ` : ""}Welcome to OlaDataPlug
+              {token ? `Hi ${user.userName}, ` : ""}Welcome to albeverest
             </h1>
             <p className="welcome">
               A technology platform that offers solutions to digital needs at

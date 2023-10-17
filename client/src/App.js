@@ -12,6 +12,7 @@ import Profile from "./pages/SharedLayout";
 import NotFound from "./pages/NotFound";
 import BuyData from "./pages/BuyData";
 import DashBoard from "./pages/DashBoard";
+import Landing2 from "./pages/Landing2";
 import BuyAirtime from "./pages/BuyAirtime";
 import Transactions from "./pages/Transactions";
 import Transfer from "./pages/Transfer";
@@ -44,7 +45,8 @@ export default function App() {
       {isLoading && <Loading />}
       <WhatsAppIcon />
       <Routes>
-        <Route exact path="/" element={<Landing />} />
+        {/* <Route exact path="/" element={<Landing />} /> */}
+        <Route exact path="/" element={<Landing2 />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register">
           <Route index element={<Register />} />

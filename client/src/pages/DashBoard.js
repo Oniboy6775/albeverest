@@ -20,7 +20,7 @@ const DashBoard = () => {
   const copyReferralLink = async () => {
     const userName = encodeURIComponent(user.userName);
     await window.navigator.clipboard.writeText(
-      `https://www.oladataplug.com/register/${userName}`
+      `https://www.albeverest.com/register/${userName}`
     );
     toast.success("Referral link copied");
   };
@@ -122,26 +122,23 @@ const DashBoard = () => {
                   1.08% charges is applied{" "}
                 </p>
               </div>
-              <h3 className="text-sm p-0 m-0">
-                Account name <br /> OlaDataPlug-
+              <h3 className="text-lg p-0 m-0">
+                Account name: Albeverest-
                 {user.userName && user.userName.substring(0, 10)}
               </h3>
               <div className="text-sm">
-                <p>
-                  {user.reservedAccountBank} <b>{user.reservedAccountNo}</b>{" "}
-                  <FaCopy
-                    onClick={() => copyAccNo(user.reservedAccountNo)}
-                    className="copy__icon"
-                  />
-                </p>
-                <p>
-                  {user.reservedAccountBank2} <br />
-                  <b>{user.reservedAccountNo2}</b>
-                  <FaCopy
-                    onClick={() => copyAccNo(user.reservedAccountNo2)}
-                    className="copy__icon"
-                  />
-                </p>
+                {user.accountNumbers.map((e) => {
+                  return (
+                    <p key={e.accountNumber} className="">
+                      {e.bankName} <b>{e.accountNumber}</b>
+                      <FaCopy
+                        onClick={() => copyAccNo(e.accountNumber)}
+                        className="copy__icon"
+                      />
+                    </p>
+                  );
+                })}
+
                 <p className="text-xs capitalize opacity-60">
                   All payments made to the above account number will
                   automatically fund your wallet
@@ -154,46 +151,12 @@ const DashBoard = () => {
                 </button>
               </div>
             </div>
-            {user.reservedAccountBank3 && (
-              <div className="card">
-                <div className="w-100 bg-white rounded-lg">
-                  <p className="text-sm text-[#25d366]">
-                    1% charges is applied
-                  </p>
-                </div>
-                <h3 className="text-sm p-0 m-0">
-                  Account name: <br /> Sodiq Ismail-OlaDataPlug-
-                  {user.userName && user.userName.substring(0, 10)}
-                </h3>
-                <div className="text-sm">
-                  <p>
-                    {user.reservedAccountBank3} <b>{user.reservedAccountNo3}</b>{" "}
-                    <FaCopy
-                      onClick={() => copyAccNo(user.reservedAccountNo3)}
-                      className="copy__icon"
-                    />
-                  </p>
-
-                  <p className="text-xs capitalize opacity-60">
-                    All payments made to the above account number will
-                    automatically fund your wallet
-                  </p>
-                  <button
-                    // onClick={() => navigate("/profile/fundWallet")}
-                    onClick={pay_with_card}
-                    className="btn btn-block special__btn"
-                  >
-                    Pay with ATM card instead (1% charges)
-                  </button>
-                </div>
-              </div>
-            )}
           </section>
           <section className="referral__section">
             <div className="card">
               <h1 className="sub__title">refer a friend</h1>
               <div className="note">
-                Refer people to OlaDataPlug and earn ₦500 immediately the person
+                Refer people to albeverest and earn ₦500 immediately the person
                 upgrade his/her account to Reseller.
               </div>
               <button className="btn special__btn" onClick={copyReferralLink}>
@@ -263,7 +226,7 @@ const DashBoard = () => {
 //       <section className="account__section " id="fundWallet">
 //         <div className="card">
 //           <h1 className="sub__title">
-//             Account name <br /> OlaDataPlug-
+//             Account name <br /> albeverest-
 //             {user.userName && user.userName.substring(0, 10)}
 //           </h1>
 //           <div className="content">
@@ -293,7 +256,7 @@ const DashBoard = () => {
 //         <div className="card">
 //           <h1 className="sub__title">refer a friend</h1>
 //           <div className="note">
-//             Refer people to OlaDataPlug and earn ₦500 immediately the person
+//             Refer people to albeverest and earn ₦500 immediately the person
 //             upgrade his/her account to Reseller.
 //           </div>
 //           <button className="btn special__btn" onClick={copyReferralLink}>
