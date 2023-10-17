@@ -69,10 +69,7 @@ const DashBoard = () => {
         <div className="z-10 m-auto bg-[#25d366] max-w-[60%] rounded-lg mt-5">
           <p className="text-center text-small leading-none text-white">
             <FaWhatsapp className="m-1" />
-            <a
-              href="https://chat.whatsapp.com/DzmXMfIwfVuANrkUPuyQBB"
-              target="blank"
-            >
+            <a href="https://chat.whatsapp.com" target="blank">
               click here{" "}
             </a>
             to join our whatsapp community
