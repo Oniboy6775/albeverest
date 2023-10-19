@@ -8,12 +8,7 @@ const UserDetails = ({
   _id,
   balance,
   createdAt,
-  reservedAccountBank,
-  reservedAccountBank2,
-  reservedAccountBank3,
-  reservedAccountNo,
-  reservedAccountNo2,
-  reservedAccountNo3,
+
   phoneNumber,
   userType,
   lastLogin,
@@ -21,6 +16,7 @@ const UserDetails = ({
   handleUserTransaction,
   handleSendEmail,
   handleUpgradeUser,
+  accountNumbers,
 }) => {
   return (
     <Wrapper>
@@ -38,39 +34,37 @@ const UserDetails = ({
               "unknown"}
           </p>
           <p>Joined on: {moment(createdAt).format("LLL")}</p>
-          <p>
-            {reservedAccountBank}: {reservedAccountNo}
-          </p>
-          <p>
-            {reservedAccountBank2}: {reservedAccountNo2}
-          </p>
-          <p>
-            {reservedAccountBank3}: {reservedAccountNo3}
-          </p>
+          {accountNumbers.map((e) => {
+            return (
+              <p key={e.accountNumber}>
+                {e.bankName}:{e.accountNumber}
+              </p>
+            );
+          })}
         </div>
         <div className="btn-container">
-          <button
+          {/* <button
             className="btn m-1 btn-hipster"
             onClick={() => handleSendEmail(email)}
             key={_id}
           >
             Send Email
-          </button>
+          </button> */}
           <button
             className="btn m-1"
             onClick={() => handleUserTransaction(userName)}
           >
             Transactions
           </button>
-          <button
+          {/* <button
             className="btn m-1"
             onClick={() =>
               handleUpgradeUser({ userId: _id, userType: userType })
             }
           >
             Upgrade user
-          </button>
-          <button className="btn m-1 btn-danger">Delete User</button>
+          </button> */}
+          {/* <button className="btn m-1 btn-danger">Delete User</button> */}
           <button onClick={close} className="btn m-1 btn-danger">
             close
           </button>

@@ -61,15 +61,15 @@ const DashBoard = () => {
 
   return (
     <Container className="">
-      {/* {!isNotificationCheck && notification && (
-        <Notification msg={notification} close={() => clearNotification()} />
-      )} */}
       {showAlert && <WarningAlert close={() => setShowAlert(false)} />}
       <div className=" main__container z-0 ">
         <div className="z-10 m-auto bg-[#25d366] max-w-[60%] rounded-lg mt-5">
           <p className="text-center text-small leading-none text-white">
             <FaWhatsapp className="m-1" />
-            <a href="https://chat.whatsapp.com" target="blank">
+            <a
+              href="https://chat.whatsapp.com/KGLHysp0hD7AeNnhzcVw02"
+              target="blank"
+            >
               click here{" "}
             </a>
             to join our whatsapp community
