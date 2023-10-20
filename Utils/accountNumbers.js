@@ -7,15 +7,16 @@ const generateAcc = async ({ userName, email }) => {
     MONNIFY_API_CONTRACT_CODE,
     MONNIFY_API_SECRET,
   } = process.env;
+  const ApiKeyEncoded = Buffer.from(
+    MONNIFY_API_KEY + ":" + MONNIFY_API_SECRET
+  ).toString("base64");
   try {
     const response = await axios.post(
       `${MONNIFY_API_URL}/api/v1/auth/login`,
       {},
       {
         headers: {
-          Authorization: `Basic ${btoa(
-            MONNIFY_API_KEY + ":" + MONNIFY_API_SECRET
-          )}`,
+          Authorization: `Basic ${ApiKeyEncoded}`,
         },
       }
     );
