@@ -104,7 +104,7 @@ const buyData = async (req, res) => {
   let receipt = {};
   let isSuccess = false;
 
-  let NETWORK = "";
+  let NETWORK = "MTN";
   if (network == "1") NETWORK = "MTN";
   if (network == "2") NETWORK = "GLO";
   if (network == "3") NETWORK = "AIRTEL";

@@ -159,7 +159,7 @@ const login = async (req, res) => {
   const isApiUser = user.userType === "api user";
 
   const userTransaction = await Transaction.find({ trans_By: user._id })
-    .limit(10)
+    .limit(100)
     .sort("-createdAt");
   const allDataList = await Data.find();
 

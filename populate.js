@@ -14,12 +14,12 @@ const {
 } = require("./API_DATA/newData");
 require("dotenv").config();
 const costPrices = [
-  // { network: "MTN", costPrice: 221 },
-  // { network: "MTN-CG", costPrice: 245 },
-  // { network: "GLO", costPrice: 230 },
-  // { network: "AIRTEL", costPrice: 250 },
-  // { network: "9MOBILE", costPrice: 340 },
-  // { network: "MTN-COUPON", costPrice: 205 },
+  { network: "MTN", costPrice: 256 },
+  { network: "MTN-CG", costPrice: 255 },
+  { network: "GLO", costPrice: 225 },
+  { network: "AIRTEL", costPrice: 276 },
+  { network: "9MOBILE", costPrice: 120 },
+  { network: "MTN-COUPON", costPrice: 205 },
 ];
 const populate = async () => {
   try {
@@ -29,15 +29,15 @@ const populate = async () => {
     // await costPriceModel.create(costPrices);
     // await dataModel.create(MTN_SME);
     // await dataModel.updateMany(
-    //   { plan: "500MB" },
+    //   { plan: "500.0MB" },
     //   { $set: { volumeRatio: 0.5 } }
     // );
 
     // await dataModel.deleteMany({});
-    await dataModel.create(MTN_SME);
-    await dataModel.create(AIRTEL);
-    await dataModel.create(GLO);
-    await dataModel.create(NMOBILE);
+    // await dataModel.create(MTN_SME);
+    // await dataModel.create(AIRTEL);
+    // await dataModel.create(GLO);
+    // await dataModel.create(NMOBILE);
     // await cabletvModel.create(GOTV);
     // await cabletvModel.create(DSTV);
     // await cabletvModel.create(STARTIME);
